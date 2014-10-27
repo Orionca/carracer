@@ -22,17 +22,21 @@ namespace WebCam {
 
 		}
 
+        int pic_widht = 800;
+        int pic_height = 600;
+
 		private void mainform_Load(object sender, EventArgs e) {
 
 			capture = new Capture();
 
-			this.Width = 800;
-			this.Height = 600;
+			this.Width = pic_widht+100;
+			this.Height = pic_height+100;
 			label2.Text = "-";
 			label4.Text = "-";
+            
 			capture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FPS, 40);
-			capture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, 640);
-			capture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, 480);
+			capture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, pic_widht);
+			capture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, pic_height);
 
 			Application.Idle += ProcessFrame;
 
@@ -104,12 +108,12 @@ namespace WebCam {
 
 			Color c = new Color();
 			c = Color.White;
-			for(int i = 0; i < imageBox1.Image.Bitmap.Width - 1; i++) {
-				for(int j = 0; j < imageBox1.Image.Bitmap.Height - 1; j++) {
+			for(int i = 0; i < imageBox1.Image.Bitmap.Width - 1; i+=25) {
+				for(int j = 0; j < imageBox1.Image.Bitmap.Height - 1; j+=25) {
 					if((i % 25 == 0) && (j % 25 == 0)) {
 						img.SetPixel(i, j, c);
 						intersections[i, j] = 1;
-						if(i > 0 && j > 0 && i < 640 && j < 480) {
+						if(i > 0 && j > 0 && i < pic_widht && j < pic_height) {
 							img.SetPixel(i, j, c);
 							img.SetPixel(i + 1, j, c);
 							img.SetPixel(i - 1, j, c);
@@ -162,7 +166,7 @@ namespace WebCam {
 			label4.Visible = state;
 		}
 
-		int[,] intersections = new int[640, 480];
+		int[,] intersections = new int[800, 600];
 
 	}
 }

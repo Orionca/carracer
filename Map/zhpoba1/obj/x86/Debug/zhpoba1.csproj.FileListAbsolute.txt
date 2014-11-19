@@ -1,0 +1,34 @@
+c:\users\kozgazd\documents\visual studio 2010\Projects\zhpoba1\zhpoba1\bin\Debug\zhpoba1.exe
+c:\users\kozgazd\documents\visual studio 2010\Projects\zhpoba1\zhpoba1\bin\Debug\zhpoba1.pdb
+c:\users\kozgazd\documents\visual studio 2010\Projects\zhpoba1\zhpoba1\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\kozgazd\documents\visual studio 2010\Projects\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.Form1.resources
+c:\users\kozgazd\documents\visual studio 2010\Projects\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.Properties.Resources.resources
+c:\users\kozgazd\documents\visual studio 2010\Projects\zhpoba1\zhpoba1\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\kozgazd\documents\visual studio 2010\Projects\zhpoba1\zhpoba1\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\kozgazd\documents\visual studio 2010\Projects\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.exe
+c:\users\kozgazd\documents\visual studio 2010\Projects\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.pdb
+D:\T.Hunter\Egyetem\jegyzetek - 6. felev\Programozási technikák és modellezés\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.exe
+D:\T.Hunter\Egyetem\jegyzetek - 6. felev\Programozási technikák és modellezés\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.pdb
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.exe
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.pdb
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\zhpoba1\zhpoba1\bin\Debug\zhpoba1.exe
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\zhpoba1\zhpoba1\bin\Debug\zhpoba1.pdb
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.Form1.resources
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.Properties.Resources.resources
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\zhpoba1\zhpoba1\obj\x86\Debug\zhpoba1.csproj.GenerateResource.Cache
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\tanitás\tanítás\zhpoba1\obj\x86\Debug\zhpoba1.exe
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\tanitás\tanítás\zhpoba1\obj\x86\Debug\zhpoba1.pdb
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\tanitás\tanítás\zhpoba1\bin\Debug\zhpoba1.exe
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\tanitás\tanítás\zhpoba1\bin\Debug\zhpoba1.pdb
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\tanitás\tanítás\zhpoba1\obj\x86\Debug\zhpoba1.Form1.resources
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\tanitás\tanítás\zhpoba1\obj\x86\Debug\zhpoba1.Properties.Resources.resources
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\tanitás\tanítás\zhpoba1\obj\x86\Debug\zhpoba1.csproj.GenerateResource.Cache
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\tanitás\tanítás\zhpoba1\obj\x86\Debug\zhpoba1.csprojResolveAssemblyReference.cache
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\Map\zhpoba1\obj\x86\Debug\zhpoba1.exe
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\Map\zhpoba1\obj\x86\Debug\zhpoba1.pdb
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\Map\zhpoba1\obj\x86\Debug\zhpoba1.csprojResolveAssemblyReference.cache
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\Map\zhpoba1\obj\x86\Debug\zhpoba1.Form1.resources
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\Map\zhpoba1\obj\x86\Debug\zhpoba1.Properties.Resources.resources
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\Map\zhpoba1\obj\x86\Debug\zhpoba1.csproj.GenerateResource.Cache
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\Map\zhpoba1\bin\Debug\zhpoba1.exe
+D:\T.Hunter\Egyetem\jegyzetek - 7. felev\Szoftverfejlesztés\Beadandó\Map\zhpoba1\bin\Debug\zhpoba1.pdb

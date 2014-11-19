@@ -1,0 +1,141 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+    struct OnePixel{
+        public Byte R;
+        public Byte G;
+        public Byte B;
+    }
+    class MImage
+    {
+        protected Bitmap bmp;
+        protected int szelesseg;
+        protected int magassag;
+        protected OnePixel[,] pixels;
+        public MImage(Bitmap ujbitmap)
+        {
+            bmp = ujbitmap;
+            szelesseg = ujbitmap.Width;
+            magassag = ujbitmap.Height;
+            pixels = new OnePixel[szelesseg, magassag];
+            for (int i = 0; i < szelesseg; i++)
+            {
+                for (int j = 0; j < magassag; j++)
+                {
+                    pixels[i, j].R = (bmp.GetPixel(i, j)).R;
+                    pixels[i, j].G = (bmp.GetPixel(i, j)).G;
+                    pixels[i, j].B = (bmp.GetPixel(i, j)).B;
+                }
+            }
+        }
+        public void SetPixel(int x, int y, byte r, byte g, byte b)
+        {
+            pixels[x, y].R = r;
+            pixels[x, y].G = g;
+            pixels[x, y].B = b;
+        }
+        public OnePixel GetPixel(int x, int y)
+        {
+            return pixels[x, y];
+        }
+        public void Draw()
+        {
+            OnePixel temp;
+            for (int i = 0; i < szelesseg; i++)
+            {
+                for (int j = 0; j < magassag; j++)
+                {
+                    temp = GetPixel(i, j);
+                    if (temp.R > 100 && temp.G > 100 && temp.B > 100)
+                    {
+
+                        bmp.SetPixel(i,j,Color.Red);
+                    }else{
+                        bmp.SetPixel(i,j,Color.Black);
+                    }
+
+                }
+            }
+        }
+        public Bitmap GetBMP()
+        {
+            return bmp;
+        }
+        public void Save(String fajlnev)
+        {
+            bmp.Save(fajlnev);
+        }
+    }
+
+
+
+class Konyv
+{
+    protected Bitmap borito;
+    protected String szerzo;
+    protected String cim;
+    protected String ISBN;
+    public static int mennyiseg;
+    protected int peldanyszam;
+
+    public Konyv(string _szerzo, string _cim, string _ISBN, string kep)
+    {
+        szerzo = _szerzo;
+        cim = _cim;
+        ISBN = _ISBN;
+        borito = new Bitmap(kep);
+        peldanyszam = 1;
+        mennyiseg++;
+    
+
+    }
+    public Bitmap GetBorito()
+    {
+        return borito;
+    }
+    public void SetBorito(Bitmap _borito)
+    {
+         borito=_borito;
+    }
+    public void Megjelenites(Label _szerzo, Label _cim, Label _ISBN, Label _pld, PictureBox _borito, Label l5)
+    {
+        _szerzo.Text = szerzo;
+        _cim.Text = cim;
+        _ISBN.Text = ISBN;
+        _pld.Text = peldanyszam.ToString();
+        _borito.Image = borito;
+        l5.Text = mennyiseg.ToString();
+    }
+    public static Konyv operator++(Konyv konyv)
+    {
+        konyv.peldanyszam++;
+        return konyv;
+    }
+
+}
+
+
+
+namespace zhpoba1
+{
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+        }
+    }
+}

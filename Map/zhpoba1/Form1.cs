@@ -17,6 +17,8 @@ namespace zhpoba1
         MImage myimage;
         Color colorhsl;
         OnePixelRGB colorrgb;
+        String fajlnevki;
+        String fajlnevbe;
    
         public Form1()
         {
@@ -27,22 +29,21 @@ namespace zhpoba1
        
         private void Form1_Load(object sender, EventArgs e)
         {
-            loadedimage = new Bitmap("imagetest2.jpg");
-            loadedimage2 = new Bitmap("imagetest2.jpg");
+            loadedimage = new Bitmap("imagetest3.jpg");
+            loadedimage2 = new Bitmap("imagetest3.jpg");
             pictureBox1.Image = loadedimage;
             myimage = new MImage(loadedimage);
             pictureBox2.Image = myimage.GetBMP();
-            hScrollBar1.Value = 10;
             label1.Text = hScrollBar1.Value.ToString();
             label3.Text = hScrollBar2.Value.ToString();
+            label7.Visible = false;
         }
 
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
         
             label1.Text = hScrollBar1.Value.ToString();
-            myimage.EnlargeImage(hScrollBar1.Value);
-            pictureBox2.Image = myimage.GetBMP();
+         
     
         }
 
@@ -53,24 +54,69 @@ namespace zhpoba1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            String fajlnev;
-            fajlnev = textBox1.Text;
-            if (fajlnev == "") {
-                fajlnev = "defaultname";
+
+            fajlnevki = textBox1.Text;
+            if (fajlnevki == "")
+            {
+                fajlnevki = "defaultname";
+
             }
-            fajlnev = fajlnev + ".jpg";
-            myimage.Save(fajlnev);
+            fajlnevki = fajlnevki + ".jpg";
+            if (fajlnevki == fajlnevbe)
+            {
+                label7.Visible = true;
+            }
+            else
+            {
+                myimage.Save(fajlnevki);
+                label7.Visible = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            hScrollBar1.Value = 0;
-            hScrollBar2.Value = 0;
+  
+            hScrollBar1.Value = hScrollBar1.Minimum;
+            hScrollBar2.Value = hScrollBar2.Minimum;
             label1.Text = hScrollBar1.Value.ToString();
             label3.Text = hScrollBar2.Value.ToString();
             pictureBox2.Image = myimage.ResetBMP(loadedimage2);
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+
+            fajlnevbe = textBox1.Text;
+            if (fajlnevbe == "")
+            {
+                fajlnevbe = "defaultname";
+            }
+            fajlnevbe = fajlnevbe + ".jpg";
+
+            loadedimage = new Bitmap(fajlnevbe);
+            loadedimage2 = new Bitmap(fajlnevbe);
+            pictureBox1.Image = loadedimage;
+            myimage = new MImage(loadedimage);
+            pictureBox2.Image = myimage.GetBMP();
+           
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            myimage.EnlargeImage(hScrollBar1.Value);
+            pictureBox2.Image = myimage.GetBMP();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            myimage.RandomGenerator(hScrollBar2.Value);
+            pictureBox2.Image = myimage.GetBMP();
+        
+        }
+
 
 
 

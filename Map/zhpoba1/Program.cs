@@ -260,6 +260,7 @@ using System.Threading.Tasks;
 
 
         public void EnlargeImage(int scale) {
+            Boolean talalt=false;
             for (int i = 0; i < szelesseg; i++)
             {
                 for (int j = 0; j < magassag; j++)
@@ -271,17 +272,98 @@ using System.Threading.Tasks;
                         using (Brush brsh = new SolidBrush(Color.Black))
                         {
                             grf.FillEllipse(brsh, i, j, scale, scale);
-                          
+                            grf.FillEllipse(brsh, (i) - (int)(scale / 5), j - (int)(scale / 5), scale, scale);
+                            grf.FillEllipse(brsh, (i) - ((int)(scale / 5))*2, j - ((int)(scale / 5))*2, scale, scale);
+                            grf.FillEllipse(brsh, (i) - ((int)(scale / 5)) * 3, j - ((int)(scale / 5)) * 3, scale, scale);
+                            grf.FillEllipse(brsh, (i) - ((int)(scale / 5)) * 4, j - ((int)(scale / 5)) * 4, scale, scale);
+                            talalt = true;
+                       
                         }
-                          i += scale;
-                          j += scale;
+                     
+                         
                     }
-                }
+             
 
+                }
+                    if (talalt == true)
+                    {
+                        j += scale;
+                        
+                    }
+
+               }
+
+                if (talalt == true)
+                {
+                    i += scale;
+                    talalt = false;
                 }
             }
            
         
+        }
+
+
+
+        public void RandomGenerator(int difficulty)
+        {
+            Random rnd = new Random();
+            int x = rnd.Next(1, szelesseg);
+            int y = rnd.Next(1, magassag);
+            int scale = 0;
+            int times = 0;
+
+            switch (difficulty)
+            {
+                case 1:
+                     scale = 20;
+                     times = 10;
+                    break;
+                case 2:
+                      scale = 30;
+                      times = 20;
+                    break;
+                case 3:
+                      scale = 36;
+                      times = 30;
+                    break;
+   
+                default:
+                     scale = 20;
+                     times = 5;
+                    break;
+            }
+
+            for (int i = 0; i <= times; i++)
+            {
+                x = rnd.Next(1, szelesseg);
+                y = rnd.Next(1, magassag);
+
+                if (((bmp.GetPixel(x, y).GetBrightness() <= (double)0.2) && (bmp.GetPixel(x, y).GetSaturation() <= (double)0.2)))
+                {
+
+                    using (Graphics grf = Graphics.FromImage(bmp))
+                    {
+                        using (Brush brsh = new SolidBrush(Color.DarkGoldenrod))
+                        {
+                            grf.FillEllipse(brsh, x, y, scale, scale);
+
+
+                        }
+
+                    }
+
+                }
+                else
+                {
+                    while (!((bmp.GetPixel(x, y).GetBrightness() <= (double)0.2) && (bmp.GetPixel(x, y).GetSaturation() <= (double)0.2)))
+                    {
+                        x = rnd.Next(1, szelesseg);
+                        y = rnd.Next(1, magassag);
+                    }
+
+                }
+            }
         }
 
 
@@ -293,7 +375,7 @@ using System.Threading.Tasks;
                 for (int j = 0; j < magassag; j++)
                 {
 
-                    if ((temp.GetPixel(i, j).GetBrightness() <= (double)0.2) && (temp.GetPixel(i, j).GetSaturation() <= (double)0.2))
+                    if ((temp.GetPixel(i, j).GetBrightness() <= (double)0.23) && (temp.GetPixel(i, j).GetSaturation() <= (double)0.23))
                     {
 
                         temp.SetPixel(i, j, Color.Black);
@@ -342,7 +424,6 @@ using System.Threading.Tasks;
             bmp.Save(fajlnev);
         }
     }
-
 
 
 

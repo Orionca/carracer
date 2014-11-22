@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace zhpoba1
+{
+
+    public partial class Form1 : Form
+    {
+        Konyv konyv;
+        MImage image;
+        int nyom = 0;
+        public Form1()
+        {
+            InitializeComponent();
+
+        }
+
+       
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+
+            konyv = new Konyv("Kinga", "Ámbrás cet hosszú téli éjszakája", "12341232101", "orwell.jpg");
+            konyv.Megjelenites(szerzo1, cim1, isbn1, peldany1, pictureBox1,label5);
+            Konyv konyv2 = new Konyv("Kinga", "Ámbrás cet hosszú téli éjszakája", "12341232101", "orwell.jpg");
+            konyv.Megjelenites(szerzo1, cim1, isbn1, peldany1, pictureBox1, label5);
+           
+            image = new MImage(konyv2.GetBorito());
+            image.Draw();
+            image.Save("orwell2.jpg");
+        }
+
+        private void peldanyszam_button_Click(object sender, EventArgs e)
+        {
+            konyv++;
+            konyv.Megjelenites(szerzo1, cim1, isbn1, peldany1, pictureBox1,label5);
+        }
+
+        private void szin1_Click(object sender, EventArgs e)
+        {
+           
+            nyom++;
+            if (nyom % 2 == 1)
+            {
+
+                Bitmap borito = new Bitmap("orwell2.jpg");
+                konyv.SetBorito(borito);
+                konyv.Megjelenites(szerzo1, cim1, isbn1, peldany1, pictureBox1, label5);
+
+            }
+            else
+            {
+                Bitmap borito = new Bitmap("orwell.jpg");
+                konyv.SetBorito(borito);
+                konyv.Megjelenites(szerzo1, cim1, isbn1, peldany1, pictureBox1, label5);
+            }
+        }
+
+ 
+    }
+}

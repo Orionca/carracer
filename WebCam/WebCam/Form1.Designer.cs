@@ -34,6 +34,8 @@
             this.set_finish_line_btn = new System.Windows.Forms.Button();
             this.open_img_btn = new System.Windows.Forms.Button();
             this.capture_new_track_btn = new System.Windows.Forms.Button();
+            this.start_race_btn = new System.Windows.Forms.Button();
+            this.map_editor_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +118,7 @@
             // set_finish_line_btn
             // 
             this.set_finish_line_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.set_finish_line_btn.Location = new System.Drawing.Point(620, 12);
+            this.set_finish_line_btn.Location = new System.Drawing.Point(620, 54);
             this.set_finish_line_btn.Name = "set_finish_line_btn";
             this.set_finish_line_btn.Size = new System.Drawing.Size(114, 23);
             this.set_finish_line_btn.TabIndex = 13;
@@ -147,11 +149,35 @@
             this.capture_new_track_btn.Visible = false;
             this.capture_new_track_btn.Click += new System.EventHandler(this.capture_new_track_btn_Click);
             // 
+            // start_race_btn
+            // 
+            this.start_race_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.start_race_btn.Location = new System.Drawing.Point(620, 83);
+            this.start_race_btn.Name = "start_race_btn";
+            this.start_race_btn.Size = new System.Drawing.Size(114, 23);
+            this.start_race_btn.TabIndex = 16;
+            this.start_race_btn.Text = "Start Race!";
+            this.start_race_btn.UseVisualStyleBackColor = true;
+            this.start_race_btn.Click += new System.EventHandler(this.start_race_btn_Click);
+            // 
+            // map_editor_btn
+            // 
+            this.map_editor_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.map_editor_btn.Location = new System.Drawing.Point(620, 25);
+            this.map_editor_btn.Name = "map_editor_btn";
+            this.map_editor_btn.Size = new System.Drawing.Size(114, 23);
+            this.map_editor_btn.TabIndex = 19;
+            this.map_editor_btn.Text = "Mapeditor";
+            this.map_editor_btn.UseVisualStyleBackColor = true;
+            this.map_editor_btn.Click += new System.EventHandler(this.map_editor_btn_Click);
+            // 
             // mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 453);
+            this.Controls.Add(this.map_editor_btn);
+            this.Controls.Add(this.start_race_btn);
             this.Controls.Add(this.capture_new_track_btn);
             this.Controls.Add(this.open_img_btn);
             this.Controls.Add(this.set_finish_line_btn);
@@ -183,6 +209,8 @@
         private System.Windows.Forms.Button set_finish_line_btn;
         private System.Windows.Forms.Button open_img_btn;
         private System.Windows.Forms.Button capture_new_track_btn;
+        private System.Windows.Forms.Button start_race_btn;
+        private System.Windows.Forms.Button map_editor_btn;
     }
 }
 

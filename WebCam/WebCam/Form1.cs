@@ -11,17 +11,19 @@ using System.IO;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.Util;
+using MakePicFromCam;
 
 namespace WebCam {
     public partial class mainform : Form {
+
 
         public mainform() {
             InitializeComponent();
             open_image_btn.Text = "Start!";
             Save.Enabled = Enabled;
             set_finish_line_btn.Enabled = false;
-
         }
+        MakePicFromCam.MapEditorForm mpef = new MapEditorForm();
         Game_Controller gc = new Game_Controller();
         int pic_widht = 800;
         int pic_height = 600;
@@ -161,7 +163,7 @@ namespace WebCam {
 
             }
         }
-
+        Player player;
         public void check_where_lmb_clicked(object sender, MouseEventArgs e) {
             if (e.Button == MouseButtons.Left) {
                 if (intersections[e.X, e.Y] == 1) {
@@ -172,6 +174,10 @@ namespace WebCam {
                     // set_labels_visible(false);
                 }
             }
+
+            //player.draw_available_next_step(track, e.X, e.Y);
+
+
             Point p = new Point(e.X, e.Y);
 
             switch (fl_counter) {
@@ -224,13 +230,23 @@ namespace WebCam {
                 track = new Bitmap(openFileDialog1.FileName);
                 reload_pic_and_draw_intersection(track);
 
-                
+
             }
         }
 
         private void capture_new_track_btn_Click(object sender, EventArgs e) {
             NewCapture();
         }
+
+        private void start_race_btn_Click(object sender, EventArgs e) {
+
+        }
+
+        private void map_editor_btn_Click(object sender, EventArgs e) {
+            mpef.Show();
+        }
+
+
 
     }
 }
@@ -254,8 +270,22 @@ class Game_Controller {
 class Player {
     private Point position;
     private Color color;
+
     public Point Position {
         get { return position; }
         set { position = value; }
+    }
+
+    public void draw_location() { }
+
+    public void draw_available_next_step(Bitmap img, int X, int Y) {
+        using (Graphics grf = Graphics.FromImage(img)) {
+            using (Brush brsh = new SolidBrush(ColorTranslator.FromHtml("#ff00ffff"))) {
+                grf.FillEllipse(brsh, new Rectangle(X + 25, Y + 25, 10, 10));
+                grf.FillEllipse(brsh, new Rectangle(X, Y + 25, 10, 10));
+                grf.FillEllipse(brsh, new Rectangle(X + 25, Y, 10, 10));
+
+            }
+        }
     }
 }
